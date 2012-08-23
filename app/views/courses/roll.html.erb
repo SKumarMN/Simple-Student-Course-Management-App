@@ -1,0 +1,19 @@
+<h1>Enroll students for the course:- <%=@course.name %></h1>
+
+<% if @course.students.count > 0 %>
+  <table>
+    <tr>
+    <th> Name</th>
+    <th> GPA</th>
+    </tr>
+    <% @course.students.each do |student| %>
+    <tr>
+    <td><%= student.name %></td>
+    <td><%= student.grade_point_average %></td>
+    </tr>
+    <%end%>
+  </table>
+  <% else %>
+    <p></p>No body has registered for the course </p>
+  <%end %>
+  

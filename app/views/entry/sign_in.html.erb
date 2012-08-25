@@ -1,0 +1,25 @@
+<html>
+  <head><title> <%= @name %></title></head>
+  <body>
+     <%= form_tag :action=>'sign_in' do %>
+      <p> Enter your Name:
+      <%= text_field_tag 'visitor_name',@name%></p>
+      <%= submit_tag 'Sign in' %>
+       
+    <%end%>
+  
+    <% if @names %>
+      <ul>
+        <% @names.each do |name| %>
+        <li>
+          <%= name%>
+        </li>
+        <%end%>
+      </ul>
+      
+    <%end %>
+    
+  </body>
+  
+ 
+</html>
